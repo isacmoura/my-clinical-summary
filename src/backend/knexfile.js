@@ -7,7 +7,7 @@ module.exports = {
       host:     "localhost",
       database: "clinical",
       user:     "postgres",
-      password: ""
+      password: "qwe123"
     },
     migrations: {
       directory: `${__dirname}/src/db/migrations`
