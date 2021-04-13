@@ -7,16 +7,15 @@ module.exports = {
             .select(
                 ['u.name',
                 'u.email',
-                'm.name AS med_name',
-                'm.description AS med_description',
-                'a.name AS app_name',
-                'a.description AS app_description',
-                'a.date']
+                connection.raw("JSON_AGG(JSON_BUILD_OBJECT('name', m.name, 'description', m.description)) AS medications"),
+                connection.raw("JSON_AGG(JSON_BUILD_OBJECT('name', a.name, 'description', a.description, 'date', a.date)) AS appointments"),
+            ]
                 )
             .join('user AS u', 'um.user_id', '=', 'u.id')
             .join('medication AS m', 'm.id', '=', 'um.medication_id')
             .join('user_appointment AS ua', 'ua.user_id', '=', 'u.id')
-            .join('appointment AS a', 'a.id', '=', 'ua.appointment_id');
+            .join('appointment AS a', 'a.id', '=', 'ua.appointment_id')
+            .groupBy('u.id','u.name');
 
             return response.json(users);
         } catch (error) {
