@@ -1,6 +1,6 @@
 # My Clinical Summary
 
-MVP of patient listing with Flutter .
+MVP of patient listing with Flutter.
 
 Libraries used:
 - [MobX](https://pub.dev/packages/mobx)
