@@ -24,7 +24,6 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  timeago: ^2.0.24
   mobx: ^1.1.1
   flutter_mobx:
   dartz: ^0.8.9
