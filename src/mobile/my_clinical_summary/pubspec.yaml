@@ -29,8 +29,11 @@ dependencies:
   flutter_mobx:
   dartz: ^0.8.9
   dio: ^3.0.9
-  flutter_modular: 1.2.5+1
+  intl: ^0.17.0
+  flutter_modular: ^2.0.0
   json_annotation: ^3.0.0
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:

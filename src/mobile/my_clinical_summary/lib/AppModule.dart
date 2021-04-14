@@ -15,5 +15,5 @@ class AppModule extends MainModule {
   Widget get bootstrap => AppWidget();
 
   @override
-  List get routers => AppRoutes.router();
+  List<ModularRouter> get routers => AppRoutes.router();
 }
