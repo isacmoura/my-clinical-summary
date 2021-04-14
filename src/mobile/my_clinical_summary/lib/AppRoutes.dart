@@ -7,10 +7,10 @@ class AppRoutes {
   static const home = "/home";
   static const user = "/userDetailsPage/:id";
 
-  static List<Router> router() {
+  static List<ModularRouter> router() {
     return [
-      Router(AppRoutes.home, child: (_, args) => HomePage(Modular.get())),
-      Router(AppRoutes.user, child: (_, args) => UserDetailsPage(Modular.get<UserStore>(params: args.params)))
+      ModularRouter(AppRoutes.home, child: (_, args) => HomePage(Modular.get())),
+      ModularRouter(AppRoutes.user, child: (_, args) => UserDetailsPage(Modular.get<UserStore>(), id: int.parse(args.params['id'])))
     ];
   }
 }
